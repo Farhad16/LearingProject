@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validate</title>
+</head>
+
+<body>
+    <!-- <form> -->
+    <label>
+        Username:
+        <input type="text" placeholder="Username" id="username" onblur="myuser()">
+        <span id="demo"></span>
+    </label><br />
+    <label>
+        Password:
+        <input type="password" placeholder="Password" id="pass" onblur="mypass()">
+        <span id="demo1"></span>
+    </label><br />
+    <select id="selection1">
+        <option value="0" disabled selected>Select One</option>
+        <option value="1">Mamun</option>
+        <option value="2">Farhad</option>
+    </select>
+    <span id="optn"></span>
+    <br />
+    <section>
+        <input type="checkbox" name="gender"><span>Daa</span>
+        <input type="checkbox" name="gender"><span>Male</span>
+        <input type="checkbox" name="gender"><span>Female</span>
+    </section>
+    <span id="choptn"></span>
+    <br />
+    <button onclick="validate()">Submit</button>
+    <!-- </form> -->
+    <script>
+        function $p(data) {
+            console.log(data);
+        }
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        function myuser() {
+            var x = $("username").value;
+            $p(x.length);
+            if (x.length < 8) {
+                $("demo").innerHTML = "Username must more then 8 characters";
+            }
+        }
+
+        function mypass() {
+            var x = $("pass").value;
+            if (x.length < 5) {
+                $("demo1").innerHTML = "Password must more then 8 characters";
+            }
+        }
+
+        function checkboxVal() {
+            var chEl = document.getElementsByName('gender');
+            for (i = 0; i < chEl.length; i++) {
+                if (chEl[i].checked){
+                    $p(chEl[i].nextElementSibling.textContent);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function validate() {
+            var selVl = $('selection1').value;
+            if (selVl == 0) {
+                $("optn").innerHTML = "Select a option";
+            }
+            if(!checkboxVal()){
+                $("choptn").innerHTML = "Checked a option";
+            }
+        }
+        var person = {
+            firstName : 'Forhad',
+            age : 21,
+            skills : ['HTML', 'CSS', 'PHP']
+        }
+    </script>
+</body>
+
+</html>

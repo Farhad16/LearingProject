@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .sty {
+            margin-bottom: 10px;
+        }
+
+        .tablestyle {
+            margin-top: 50px;
+        }
+
+        .tablestyle td {
+            padding: 8px;
+        }
+
+        .tablestyle a {
+            text-decoration: none;
+            padding-right: 3px;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <span>Semester:</span>
+    <select class="sty">
+        <option>--Select one--</option>
+        <option value="Fall-18">Fall-18</option>
+        <option value="Summer-18">Summer-19</option>
+        <option value="Spring-19">Spring-19</option>
+    </select><br />
+    <span>Course:</span>
+    <select class="sty">
+        <option>--Select one--</option>
+        <option value="Desktop and Web Programming">Desktop and Web Programming</option>
+        <option value="Software Engineering & Cyber Laws">Software Engineering & Cyber Laws</option>
+        <option value="Computer Architecture & Organization">Computer Architecture & Organization</option>
+    </select><br />
+    <span>Section:</span>
+    <select class="sty">
+        <option>--Select one--</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+    </select><br />
+    <button onclick="myfunction()">Submit</button>
+    <div id="show">
+        <table border="1" class="tablestyle">
+            <tr>
+                <th>Course</th>
+                <th>Section</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Desktop and Web Programming</td>
+                <td>A</td>
+                <td><a href="#">Delete</a><a href="#">Update</a><a href="#">Save</a></td>
+            </tr>
+            <tr>
+                <td>Software Engineering & Cyber Laws</td>
+                <td>B</td>
+                <td><a href="#">Delete</a><a href="#">Update</a><a href="#">Save</a></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var x = document.getElementById("show");
+        x.style.display = "none";
+        function myfunction() {
+            x.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
